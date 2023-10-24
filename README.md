@@ -29,6 +29,7 @@ The training and testing experiments  for DFormer-SOD are conducted on one NVIDI
 
 - **Requirement**
 The requirements for DFormer-SOD is the same as [DFormer](https://github.com/VCIP-RGBD/DFormer).
+If you have installed it, you can skip this.
 
 ```
 conda create -n dformer python=3.10 -y
