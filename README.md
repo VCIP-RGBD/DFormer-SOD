@@ -16,29 +16,35 @@
 > [Qibin Hou*](https://scholar.google.com/citations?user=fF8OFV8AAAAJ&hl=zh-CN)
 
 
-This official repository contains the SOD code of paper 'DFormer: Rethinking RGBD Representation Learning for Semantic Segmentation'. The technical report could be found at [arXiv](https://arxiv.org/pdf/2309.09668.pdf). 
+This official repository contains the RGB-D SOD code of paper 'DFormer: Rethinking RGBD Representation Learning for Semantic Segmentation'. The technical report could be found at [arXiv](https://arxiv.org/pdf/2309.09668.pdf). 
 
 We invite all to contribute in making it more acessible and useful. If you have any questions about our work, feel free to contact me via e-mail (bowenyin@mail.nankai.edu.cn). If you are using our code and evaluation toolbox for your research, please cite this paper ([BibTeX](https://scholar.googleusercontent.com/scholar.bib?q=info:GdonbkKZMYsJ:scholar.google.com/&output=citation&scisdr=ClEqKQU5EL_6hIbkmOc:AFWwaeYAAAAAZQvigOeM_E2bhS0d1niD6tYkedk&scisig=AFWwaeYAAAAAZQvigF3P1qyHXOMhOEt-zalsD8w&scisf=4&ct=citation&cd=-1&hl=zh-CN)).
 
 
 
 
-**1. Download Datasets and Checkpoints.**
+**1. Preparation.**
+
+The training and testing experiments  for DFormer-SOD are conducted on one NVIDIA Tesla 3090 GPU with 24 GB memory.
+
+- **Requirement**
+The requirements for DFormer-SOD is the same as [DFormer](https://github.com/VCIP-RGBD/DFormer).
+
+```
+conda create -n dformer python=3.10 -y
+conda activate dformer
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11/index.html
+pip install tqdm opencv-python scipy tensorboardX tabulate easydict
+```
 
 - **Datasets:** 
 
-The training and testing experiments are conducted on one NVIDIA Tesla 3090 GPU with 24 GB memory.
+Download training dataset at
+[Google Drive](https://drive.google.com/file/d/1Orss85k3wEUgDhItwT1goEN6WQFA1SOw/view?usp=sharing). 
+Then move it into `./Data/`.
 
-(1) Configuring your environment (Prerequisites):
-    
-    + Installing necessary packages: `pip install -r requirements.txt`.
-
-(2) Downloading necessary data:
-
-    + Downloading training dataset ([download link (Google Drive)](https://drive.google.com/file/d/1Orss85k3wEUgDhItwT1goEN6WQFA1SOw/view?usp=sharing)) and move it into `./Data/`.
-
-
-    + Downloading testing dataset ([download link (Google Drive)](https://drive.google.com/file/d/1sWJqCg2dAKSSkfrvB7zkwwsW6Ybd4Gd1/view?usp=sharing)) and move it into `./Data/`.
+Download testing dataset at [Google Drive](https://drive.google.com/file/d/1sWJqCg2dAKSSkfrvB7zkwwsW6Ybd4Gd1/view?usp=sharing) and move it into `./Data/`.
 
 - **Checkpoints:** 
 
@@ -47,9 +53,9 @@ ImageNet-1K Pre-trained DFormers T/S/B/L can be downloaded at
 | Pre-trained | [GoogleDrive](https://drive.google.com/drive/folders/1YuW7qUtnguUFkhC-sfqGySrerjK0rZJX?usp=sharing) | [OneDrive](https://mailnankaieducn-my.sharepoint.com/:f:/g/personal/bowenyin_mail_nankai_edu_cn/EhTTF_ZofnFIkz2WSDFAiiIBEIubZUpIwDQYwm9Hvxwu8Q?e=x8XumL) | [BaiduNetdisk](https://pan.baidu.com/s/1JlexzFqMcZOXPNiNkE1zRA?pwd=gct6) | 
 |:---: |:---:|:---:|:---:|
 
-- **Trained Weight:**
+- **Trained Weight (Comming Soon):**
 
-Comming Soon
+
 
 
 
