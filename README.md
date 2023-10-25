@@ -106,8 +106,7 @@ You may want to cite:
 
 ### Acknowledgment
 
-Our implementation is mainly based on
-[CamoFormer](https://github.com/HVision-NKU/CamoFormer), [mmsegmentaion](https://github.com/open-mmlab/mmsegmentation/tree/v0.24.1), and [SPNet](https://github.com/taozh2017/SPNet). Thanks for their authors.
+Our implementation is mainly based on [mmsegmentaion](https://github.com/open-mmlab/mmsegmentation/tree/v0.24.1), and [SPNet](https://github.com/taozh2017/SPNet). Thanks for their authors.
 
 
 
