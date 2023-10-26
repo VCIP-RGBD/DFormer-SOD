@@ -56,8 +56,13 @@ ImageNet-1K Pre-trained DFormers T/S/B/L can be downloaded at
 
 - **Trained Weight (Comming Soon):**
 
+DFormer-L
+[BaiduNetDisk](https://pan.baidu.com/s/1gVlaSimfSLyVXuxcqylpug?pwd=op1n)
 
+- **Predicted Saliency Maps:**
 
+DFormer-L
+[BaiduNetDisk](https://pan.baidu.com/s/1NyoycXV6JQoSc7vNAGfFVw?pwd=cf7s)
 
 
 
