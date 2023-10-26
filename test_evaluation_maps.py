@@ -70,7 +70,7 @@ if __name__ == "__main__":
     test_datasets = ['NJU2K','NLPR', 'DES', 'SSD','SIP', 'STERE'] 
 
     
-    parser.add_argument('--methods',  type=str,  default=['SPNet'])
+    parser.add_argument('--methods',  type=str,  default=['DFormer-SOD'])
     parser.add_argument('--datasets', type=str,  default=test_datasets)
     parser.add_argument('--gt_dir',   type=str,  default='/home/ubuntu/dataset/RGBDSal/TestDataset/')
     parser.add_argument('--root_dir', type=str,  default=sal_path)

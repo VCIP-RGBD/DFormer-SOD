@@ -28,9 +28,9 @@ if opt.gpu_id=='0':
 model = segmodel()
 model.cuda()
 
-model.load_state_dict(torch.load('/mnt/sda/repos/2023_RGBX/SPNet-main_my/Checkpoint/base/HyperNet_epoch_35.pth'),strict=True)
+model.load_state_dict(torch.load('Checkpoint/trained/DFormer_SOD_epoch_best.pth'),strict=True)
 model.eval()
-
+# HyperNet_epoch_35
 #test
 test_datasets = ['NJU2K','NLPR', 'DES', 'SSD','SIP', 'STERE'] 
 
@@ -38,7 +38,7 @@ test_datasets = ['NJU2K','NLPR', 'DES', 'SSD','SIP', 'STERE']
 
 
 for dataset in test_datasets:
-    save_path = './test_maps/SPNet/' + dataset + '/'
+    save_path = './test_maps/DFormer-SOD/' + dataset + '/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
         

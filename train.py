@@ -126,13 +126,13 @@ def train(train_loader, model, optimizer, epoch,save_path):
         writer.add_scalar('Loss-epoch', loss_all, global_step=epoch)
         
         if (epoch) % 5 == 0:
-            torch.save(model.state_dict(), save_path+'HyperNet_epoch_{}.pth'.format(epoch))
+            torch.save(model.state_dict(), save_path+'DFormer_SOD_epoch_{}.pth'.format(epoch))
             
     except KeyboardInterrupt: 
         print('Keyboard Interrupt: save model and exit.')
         if not os.path.exists(save_path):
             os.makedirs(save_path)
-        torch.save(model.state_dict(), save_path+'HyperNet_epoch_{}.pth'.format(epoch+1))
+        torch.save(model.state_dict(), save_path+'DFormer_SOD_epoch_{}.pth'.format(epoch+1))
         print('save checkpoints successfully!')
         raise
         
@@ -166,7 +166,7 @@ def val(test_loader,model,epoch,save_path):
             if mae<best_mae:
                 best_mae   = mae
                 best_epoch = epoch
-                torch.save(model.state_dict(), save_path+'SPNet_epoch_best.pth')
+                torch.save(model.state_dict(), save_path+'DFormer_SOD_epoch_best.pth')
                 print('best epoch:{}'.format(epoch))
                 
         logging.info('#TEST#:Epoch:{} MAE:{} bestEpoch:{} bestMAE:{}'.format(epoch,mae,best_epoch,best_mae))
