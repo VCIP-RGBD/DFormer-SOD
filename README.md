@@ -74,7 +74,8 @@ python train.py
 
 
 ```
-bash eval.sh
+python test_produce_maps.py
+python test_evaluation_maps.py
 ```
 
 
