@@ -72,7 +72,7 @@ if __name__ == "__main__":
     
     parser.add_argument('--methods',  type=str,  default=['DFormer-SOD'])
     parser.add_argument('--datasets', type=str,  default=test_datasets)
-    parser.add_argument('--gt_dir',   type=str,  default='/home/ubuntu/dataset/RGBDSal/TestDataset/')
+    parser.add_argument('--gt_dir',   type=str,  default='./Data/TestDataset/')
     parser.add_argument('--root_dir', type=str,  default=sal_path)
     parser.add_argument('--save_dir', type=str,  default=None)
     parser.add_argument('--cuda',     type=bool, default=True)

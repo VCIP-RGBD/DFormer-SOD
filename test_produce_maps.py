@@ -8,15 +8,17 @@ import cv2
 # from Code.lib.model import SPNet
 from Code.models.builder import EncoderDecoder as segmodel
 from Code.utils.data import test_dataset
+from tqdm import tqdm
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--testsize', type=int, default=352, help='testing size')
 parser.add_argument('--gpu_id',   type=str, default='0', help='select gpu id')
 parser.add_argument('--test_path',type=str, default='./Data/TestDataset/',help='test dataset path')
+parser.add_argument('--checkpoint',type=str, default='Checkpoint/trained/DFormer_SOD_epoch_best.pth',help='checkpoint path')
 opt = parser.parse_args()
 
-dataset_path = '/home/ubuntu/dataset/RGBDSal/TestDataset/'#opt.test_path
+dataset_path = opt.test_path
 
 #set device for test
 if opt.gpu_id=='0':
@@ -25,12 +27,11 @@ if opt.gpu_id=='0':
  
 
 #load the model
-model = segmodel()
+model = segmodel(is_test=True)
 model.cuda()
 
-model.load_state_dict(torch.load('Checkpoint/trained/DFormer_SOD_epoch_best.pth'),strict=True)
+model.load_state_dict(torch.load(opt.checkpoint),strict=True)
 model.eval()
-# HyperNet_epoch_35
 #test
 test_datasets = ['NJU2K','NLPR', 'DES', 'SSD','SIP', 'STERE'] 
 
@@ -46,7 +47,8 @@ for dataset in test_datasets:
     gt_root     = dataset_path + dataset + '/GT/'
     depth_root  = dataset_path + dataset + '/depth/'
     test_loader = test_dataset(image_root, gt_root,depth_root, opt.testsize)
-    for i in range(test_loader.size):
+    print('test dataset: ',dataset)
+    for i in tqdm(range(test_loader.size), dynamic_ncols=True):
         image, gt,depth, name, image_for_post = test_loader.load_data()
         
         gt      = np.asarray(gt, np.float32)
@@ -59,6 +61,6 @@ for dataset in test_datasets:
         res     = res.sigmoid().data.cpu().numpy().squeeze()
         res     = (res - res.min()) / (res.max() - res.min() + 1e-8)
         
-        print('save img to: ',save_path+name)
+        # print('save img to: ',save_path+name)
         cv2.imwrite(save_path+name,res*255)
     print('Test Done!')

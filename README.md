@@ -54,7 +54,7 @@ ImageNet-1K Pre-trained DFormers T/S/B/L can be downloaded at
 | Pre-trained | [GoogleDrive](https://drive.google.com/drive/folders/1YuW7qUtnguUFkhC-sfqGySrerjK0rZJX?usp=sharing) | [OneDrive](https://mailnankaieducn-my.sharepoint.com/:f:/g/personal/bowenyin_mail_nankai_edu_cn/EhTTF_ZofnFIkz2WSDFAiiIBEIubZUpIwDQYwm9Hvxwu8Q?e=x8XumL) | [BaiduNetdisk](https://pan.baidu.com/s/1JlexzFqMcZOXPNiNkE1zRA?pwd=gct6) | 
 |:---: |:---:|:---:|:---:|
 
-- **Trained Weight (Comming Soon):**
+- **Trained Weight:**
 
 DFormer-L
 [BaiduNetDisk](https://pan.baidu.com/s/1gVlaSimfSLyVXuxcqylpug?pwd=op1n)
@@ -65,7 +65,37 @@ DFormer-L
 [BaiduNetDisk](https://pan.baidu.com/s/1NyoycXV6JQoSc7vNAGfFVw?pwd=cf7s)
 
 
+<details>
+<summary>Orgnize the checkpoints and dataset folder in the following structure:</summary>
+<pre><code>
 
+```shell
+<Checkpoint>
+|-- <pretrained>
+    |-- <DFormer_Large.pth.tar>
+    |-- <DFormer_Base.pth.tar>
+    |-- <DFormer_Small.pth.tar>
+    |-- <DFormer_Tiny.pth.tar>
+|-- <trained>
+    |-- <DFormer_SOD_epoch_best.pth>
+<Data>
+|-- <TrainDataset>
+    |-- <RGB>
+        |-- <name1>.<ImageFormat>
+        |-- <name2>.<ImageFormat>
+        ...
+    |-- <Depth>
+        |-- <name1>.<DepthFormat>
+        |-- <name2>.<DepthFormat>
+    |-- <GT>
+        |-- <name1>.<DepthFormat>
+        |-- <name2>.<DepthFormat>
+|-- <TestDataset>
+|-- ...
+```
+
+</code></pre>
+</details>
 
 **2. Train.**
 

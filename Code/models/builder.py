@@ -56,7 +56,7 @@ def build_segmentor(cfg, train_cfg=None, test_cfg=None):
         cfg, default_args=dict(train_cfg=train_cfg, test_cfg=test_cfg))
 
 class EncoderDecoder(nn.Module):
-    def __init__(self, cfg=None, criterion=nn.CrossEntropyLoss(reduction='mean', ignore_index=255), norm_layer=nn.BatchNorm2d, single_GPU=True):
+    def __init__(self, cfg=None, criterion=nn.CrossEntropyLoss(reduction='mean', ignore_index=255), norm_layer=nn.BatchNorm2d, single_GPU=True,is_test=False):
         super(EncoderDecoder, self).__init__()
         self.norm_layer = norm_layer
         backbone = 'DFormer-Large'
@@ -134,7 +134,7 @@ class EncoderDecoder(nn.Module):
             self.decode_head = FCNHead(in_channels=self.channels[-1], kernel_size=3, num_classes=cfg.num_classes, norm_layer=norm_layer)
 
         self.criterion = criterion
-        if self.criterion:
+        if self.criterion and not is_test:
             self.init_weights(cfg, pretrained='Checkpoint/pretrained/DFormer_Large.pth.tar')
     
     def init_weights(self, cfg, pretrained=None):
