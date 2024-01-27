@@ -13,15 +13,15 @@ parser.add_argument('--decay_epoch', type=int,   default=60,    help='every n ep
 parser.add_argument('--load',        type=str,   default=None,  help='train from checkpoints')
 parser.add_argument('--gpu_id',      type=str,   default='0',   help='train use gpu')
 
-parser.add_argument('--rgb_label_root',      type=str, default='/home/ubuntu/dataset/RGBDSal/TrainDataset/RGB/',           help='the training rgb images root')
-parser.add_argument('--depth_label_root',    type=str, default='/home/ubuntu/dataset/RGBDSal/TrainDataset/depth/',         help='the training depth images root')
-parser.add_argument('--gt_label_root',       type=str, default='/home/ubuntu/dataset/RGBDSal/TrainDataset/GT/',            help='the training gt images root')
+parser.add_argument('--rgb_label_root',      type=str, default='./Data/TrainDataset/RGB/',           help='the training rgb images root')
+parser.add_argument('--depth_label_root',    type=str, default='./Data/TrainDataset/depth/',         help='the training depth images root')
+parser.add_argument('--gt_label_root',       type=str, default='./Data/TrainDataset/GT/',            help='the training gt images root')
 
-parser.add_argument('--val_rgb_root',        type=str, default='/home/ubuntu/dataset/RGBDSal/TestDataset/NJU2K/RGB/',      help='the test rgb images root')
-parser.add_argument('--val_depth_root',      type=str, default='/home/ubuntu/dataset/RGBDSal/TestDataset/NJU2K/depth/',    help='the test depth images root')
-parser.add_argument('--val_gt_root',         type=str, default='/home/ubuntu/dataset/RGBDSal/TestDataset/NJU2K/GT/',       help='the test gt images root')
+parser.add_argument('--val_rgb_root',        type=str, default='./Data/TestDataset/NJU2K/RGB/',      help='the test rgb images root')
+parser.add_argument('--val_depth_root',      type=str, default='./Data/TestDataset/NJU2K/depth/',    help='the test depth images root')
+parser.add_argument('--val_gt_root',         type=str, default='./Data/TestDataset/NJU2K/GT/',       help='the test gt images root')
 
-parser.add_argument('--val_root',         type=str, default='/home/ubuntu/dataset/RGBDSal/TestDataset/',       help='the test gt images root')
+parser.add_argument('--val_root',         type=str, default='./Data/TestDataset/',       help='the test gt images root')
 
 
 parser.add_argument('--save_path',           type=str, default='./Checkpoint/base/',    help='the path to save models and logs')
